@@ -1,0 +1,39 @@
+box: golang
+dev:
+  steps:
+    # Set the workspace for this project and not the default pipeline/source
+    - wercker/setup-go-workspace@1.2.1:
+        package-dir: github.com/jacec/effective-go
+
+    - script:
+        name: run make
+        code: |
+            make
+# Build definition
+build:
+  # The steps that will be executed on build
+  steps:
+    # Set the workspace for this project and not the default pipeline/source
+    - wercker/setup-go-workspace@1.2.1:
+        package-dir: github.com/jacec/effective-go
+
+    # golint step!
+    - wercker/golint
+
+    # Build the project
+    - script:
+        name: run make
+        code: |
+          make
+
+    # Test the project
+    - script:
+        name: run tests
+        code: |
+          sh ./tests.sh
+  # after steps for cleanup and notifications
+  #after-steps:
+      #send a slack notifcation based on the configured webhook URL
+      #if you're running this locally remember to set X_SLACK_URL
+  #    - slack-notifier:
+  #        url: $SLACK_URL

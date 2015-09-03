@@ -1,0 +1,14 @@
+{
+	"ImportPath": "github.com/jacec/effective-go",
+	"GoVersion": "go1.4.2",
+	"Deps": [
+		{
+			"ImportPath": "github.com/mitchellh/cli",
+			"Rev": "76e2780bc4f71797e1ce037ac0b43b7c99b31749"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/ssh/terminal",
+			"Rev": "1e856cbfdf9bc25eefca75f83f25d55e35ae72e0"
+		}
+	]
+}
