@@ -11,4 +11,3 @@ git clone https://github.com/jacec/effective-go.git
 cd effective-go
 make
 ```
-# effective-go

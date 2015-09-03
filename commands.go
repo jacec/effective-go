@@ -36,7 +36,7 @@ func init() {
 				UI: ui,
 			}, nil
 		},
-		"channelcommand": func() (cli.Command, error) {
+		"channels": func() (cli.Command, error) {
 			return &command.ChannelCommand{
 				UI: ui,
 			}, nil
